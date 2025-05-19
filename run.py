@@ -8,7 +8,7 @@ import pandas as pd
 import torch
 from torch.utils.data import DataLoader
 from utils.preprocess import *
-from model.Clustering import Clustering
+from model.SAMM import SAMM
 # from model.Clustering_No_LM import Clustering
 from datetime import datetime
 import argparse
@@ -198,7 +198,7 @@ if __name__ == '__main__':
     train_loader = DataLoader(dataset=train_dataset, batch_size=args.batch_size, shuffle=True)
 
     # Main body
-    model = Clustering(args)
+    model = SAMM(args)
     model.to(model.device)
     acc_list, f1_list, pre_list, rec_list = solver(args, model, train_loader)
     endtime = datetime.now()
