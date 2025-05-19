@@ -4,9 +4,9 @@ from torch.nn import functional as F
 from model.Mining import Mining
 from vector_quantize_pytorch import VectorQuantize
 from model.residual import ResidualStack
-class Clustering(nn.Module):
+class SAMM(nn.Module):
     def __init__(self, args):
-        super(Clustering, self).__init__()
+        super(SAMM, self).__init__()
         self.fea_emb = args.fea_emb_dim
         self.num_emb = args.symbol_space
         self.fea_num = args.feature_dim
